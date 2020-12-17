@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.niu.springboot.mapper.SysUserMapper" >
+    <sql id="BASE_TABLE">
+    sys_user
+   </sql>
+
+    <sql id="BASE_COLUMN">
+    id,name,pwd
+  </sql>
+
+
+
+    <select id="selectUserById" resultType="com.niu.springboot.model.SysUser">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        <where>
+            id = #{id}
+        </where>
+    </select>
+
+
+</mapper>
